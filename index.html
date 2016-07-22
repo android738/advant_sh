@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+	<script src="js/jquery-2.1.1.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>INSPINIA | Dashboard</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+
+<!--
+    <link href="css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+-->
+	
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	<link href='css/circe.css' rel='stylesheet' type='text/css'>
+	<link href='css/google1.css' rel='stylesheet' type='text/css'>
+	<link href='css/google2.css' rel='stylesheet' type='text/css'>
+	<link href='css/google3.css' rel='stylesheet' type='text/css'>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-touch.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
+  <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+  <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+  <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+  <script src="http://ui-grid.info/release/ui-grid.js"></script>
+  <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+	<style>
+	.grid {
+  width: 610px;
+  height: 250px;
+}
+	</style>
+</head>
+
+<body class="pace-done mini-navbar">
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav metismenu" id="side-menu">
+					<li class="nav-header">
+                        <div class="logo-element">
+                            <img src="img/profile.jpg">
+                        </div>
+                    </li>
+                    <li class="active">
+                        <a href="#"><img src="leftm/menu/basket.png"><div class="new-count-info">8</div><div class="nav-label-new">Магазин</div></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="leftm/menu/user.png"><div class="nav-label-new">CRM</div></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="leftm/menu/transform.png"><div class="nav-label-new">Лендинги</div></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="leftm/menu/tools.png"><div class="nav-label-new">Настройки</div></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="leftm/menu/calendar.png"><div class="nav-label-new">Задачи</div></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="leftm/menu/storage.png"><div class="nav-label-new">Склад</div></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="leftm/menu/award.png"><div class="nav-label-new">Бонусы</div></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="leftm/menu/switch.png"><div class="nav-label-new">Виджеты</div></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="leftm/menu/computer.png"><div class="nav-label-new">Касса</div></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="leftm/menu/cash.png"><div class="nav-label-new">Деньги</div></a>
+                    </li>
+					<li>
+                        <a href="#"><img src="leftm/menu/disconnect.png"><div class="nav-label-new">Партнерка</div></a>
+                    </li>
+                </ul>
+				<a href="#" class="a-footer"><i class="fa fa-plus"></i></a>
+            </div>
+        </nav>
+		
+        <div id="page-wrapper" class="gray-bg dashbard-1">
+        <div class="row">
+        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <div class="advant-header-text1">
+				<span class="logospan">advantshop</span>
+			</div>
+			<div class="advant-header-text2">
+				<span class="newspan">http://trial-sport.ru/sales.php</span>
+			</div>
+			<div class="advant-header-text3">
+				<span class="onlinespan">online</span>
+			</div>
+			<div class="advant-header-text4">
+				<span class="lkspan">№ клиента <span><u>2345</u>&nbsp;&nbsp;<u>3400</u> руб.</span></span>
+			</div>
+			<div class="advant-header-text5">
+				<a class="lkbtn" href="#">Личный кабинет</a>
+			</div>
+        </div>
+		<div class="header-right">
+			<a href="#" class="logout"><img src="leftm/logout.png"/></a>
+
+			<a href="#" class="battery"><img src="leftm/battery.png"/></a>
+			<a href="#" class="help"><span>Помощь</span><i class="fa fa-chevron-down"></i></a>
+		</div
+        </nav>
+
+		
+        </div>
+        <div class="row new-menu-center">
+			<div class="new-menu-items">
+				<a href="#"class="active-item">Рабочий стол</a>
+				<a href="#" class="next-item">Каталог<i class="fa fa-chevron-down"></i></a>
+				<a href="#" class="next-item">Заказы<i class="fa fa-chevron-down"></i></a>
+				<a href="#" class="next-item">Покупатели<i class="fa fa-chevron-down"></i></a>
+				<a href="#" class="next-item">Страницы и меню<i class="fa fa-chevron-down"></i></a>
+				<a href="#" class="next-item">Модули</a>
+				<a href="#" class="next-item">Дизайн<i class="fa fa-chevron-down"></i></a>
+				<a href="#" class="next-item">Маркетинг<i class="fa fa-chevron-down"></i></a>
+			</div>
+			<div class="search">
+				<form method="post" action="/">
+					<a href="#" class="last-item">В товарах<i class="fa fa-chevron-down"></i></a>
+					<input type="text" name="search" class="search-input"></input>
+					<button type="submit" class="search-submit"></button>
+				</form>
+				<a href="#" class="search-cr"></a>
+			</div>
+		</div>
+		
+        <div class="row">
+			<div class="main-center">
+				<div class="main-left-item">
+					<div class="main-left-child">
+						<div class="left-title">Заказы</div>
+						<div class="mini-item">
+							<i class="fa fa-circle" style="color:#e57373"></i>
+							<a href="#" class="left-span">Все заказы</a><span class="right-span">234</span>
+						</div>
+						<div class="mini-item">
+							<i class="fa fa-circle" style="color:#ba68c8"></i>
+							<a href="#" class="left-span">Новые</a><span class="right-span">456</span>
+						</div>
+						<div class="mini-item">
+							<i class="fa fa-circle" style="color:#5c6bc0"></i>
+							<a href="#" class="left-span">Доставлен</a><span class="right-span">3</span>
+						</div>
+						<div class="mini-item">
+							<i class="fa fa-circle" style="color:#42a5f5"></i>
+							<a href="#" class="left-span">Отменен</a><span class="right-span">45</span>
+						</div>
+						<div class="mini-item">
+							<i class="fa fa-circle" style="color:#26c6da"></i>
+							<a href="#" class="left-span">Отменен навсегда</a><span class="right-span">7</span>
+						</div>
+						<div class="mini-item">
+							<i class="fa fa-circle" style="color:#9ccc65"></i>
+							<a href="#" class="left-span">В обработке</a><span class="right-span">9</span>
+						</div>
+						<div class="mini-item">
+							<i class="fa fa-circle" style="color:#ffee58"></i>
+							<a href="#" class="left-span">Отправлен</a><span class="right-span">4</span>
+						</div>
+					</div>
+					<div class="main-left-child2">
+						<div class="left-title">Источники заказов</div>
+						<div class="mini-item">
+                            <div class="title-bar">Корзина магазина</div><div class="span-right">40%</div>
+						</div>
+						<div class="child2-bar">
+						<div style="width: 40%;" class="child2-bar-progress"></div>
+						</div>
+						
+						<div class="mini-item">
+                            <div class="title-bar">Мобильная версия</div><div class="span-right">20%</div>
+						</div>
+						<div class="child2-bar">
+							<div style="width: 20%;" class="child2-bar-progress"></div>
+						</div>
+						<div class="mini-item">
+                            <div class="title-bar">Оффлайн</div><div class="span-right">15%</div>
+						</div>
+						<div class="child2-bar">
+							<div style="width: 15%;" class="child2-bar-progress"></div>
+						</div>
+						<div class="mini-item">
+                            <div class="title-bar">В один клик</div><div class="span-right">10%</div>
+						</div>
+						<div class="child2-bar">
+							<div style="width: 10%;" class="child2-bar-progress"></div>
+						</div>
+						<div class="mini-item">
+                            <div class="title-bar">Посадочная страница</div><div class="span-right">10%</div>
+						</div>
+						<div class="child2-bar">
+							<div style="width: 10%;" class="child2-bar-progress"></div>
+						</div>
+						<div class="mini-item">
+                            <div class="title-bar">По телефону</div><div class="span-right">5%</div>
+						</div>
+						<div class="child2-bar">
+							<div style="width: 5%;" class="child2-bar-progress"></div>
+						</div>
+					</div>
+					<div class="main-left-child3">
+					<a href="#">Режим обучения</a>
+					<a href="#">Посмотреть видео</a>
+					<a href="#">Помощь</a>
+					<a href="#">Задать вопрос</a>
+					</div>
+				</div>
+				<div class="main-center-item">
+					<div class="center-item-child">
+					<a href="#dialog"  name="modal" class="center-tool"><i class="fa fa-wrench"></i></a>
+					
+<script>
+$(document).ready(function() {	
+
+	//select all the a tag with name equal to modal
+	$('a[name=modal]').click(function(e) {
+		//Cancel the link behavior
+		e.preventDefault();
+		//Get the A tag
+		var id = $(this).attr('href');
+	
+		//Get the screen height and width
+		var maskHeight = $(document).height();
+		var maskWidth = $(window).width();
+	
+		//Set heigth and width to mask to fill up the whole screen
+		$('#mask').css({'width':maskWidth,'height':maskHeight});
+		
+		//transition effect		
+		$('#mask').fadeIn(1000);	
+		$('#mask').fadeTo("slow",0.8);	
+	
+		//Get the window height and width
+		var winH = $(window).height();
+		var winW = $(window).width();
+              
+		//Set the popup window to center
+		$(id).css('top',  winH/2-$(id).height()/2);
+		$(id).css('left', winW/2-$(id).width()/2);
+	
+		//transition effect
+		$(id).fadeIn(2000); 
+	
+	});
+	
+	//if close button is clicked
+	$('.window .close-tab').click(function (e) {
+		//Cancel the link behavior
+		e.preventDefault();
+		$('#mask, .window').hide();
+	});		
+	
+	$('.window .window-cancel').click(function (e) {
+		//Cancel the link behavior
+		e.preventDefault();
+		$('#mask, .window').hide();
+	});	
+	
+	//if mask is clicked
+	$('#mask').click(function () {
+		$(this).hide();
+		$('.window').hide();
+	});		
+
+	$(this).keydown(function(eventObject){
+        if (eventObject.which == 27)
+		$('#mask, .window').hide();
+    });
+	
+});
+
+</script>
+						<table border="0" class="center-table1">
+							<tbody>
+								<tr>
+									<th class="th1">Товаров</th>
+									<th class="th2">Заказов<br>сегодня</th>
+									<th class="th3">Заказов<br>вчера</th>
+									<th class="th4">Заказов<br>за месяц</th>
+									<th class="th5">Лиды<br>сегодня</th>
+									<th>Звонков<br>сегодня</th>
+								</tr>
+								
+								<tr>
+									<td class="td1">7345</td>
+									<td class="td1">34</td>
+									<td class="td1">87</td>
+									<td class="td1">1256</td>
+									<td class="td1">5</td>
+									<td class="td1">N/a</td>
+								</tr>
+								
+								<tr>
+									<td>штук</td>
+									<td>17 788 руб.</td>
+									<td>69 332 руб.</td>
+									<td>190 878 руб.</td>
+									<td>6 789 руб.</td>
+									<td><a href="#" style="color:#ff0000">Подключить услугу</a></td>
+								</tr>
+							</tbody>
+						</table>
+
+
+					</div>
+					<div class="center-item-child2">
+						<div class="center-title">Динамика заказов</div>
+						<!--<div class="right-title"><i class="fa fa-calendar-o"></i>За последний месяц<i class="fa fa-chevron-down"></i></div>-->
+						<div class="form-group calendar-center" id="data_1">
+                                <div class="input-group date">
+                                    <span class="input-group-addon"><i class="fa fa-calendar"></i></span><input type="text" class="form-control" value="03/04/2014">
+                                </div>
+                            </div>
+						<!--<img src="leftm/graf.jpg" class="img1"/>-->
+						<div class="flot-chart">
+                            <div class="flot-chart-content" id="flot-line-chart"></div>
+                        </div>
+					</div>
+					<div class="center-item-child3">
+
+						<div id="tabs">
+							<ul>
+								<li><a href="#tabs-1" title="" class="tabulous_active">Все заказы</a></li>
+								<li><a href="#tabs-2" title="">Назначенные мне</a></li>
+								<li><a href="#tabs-3" title="" style="border:none">Не назначенные<i class="fa fa-chevron-down"></i></a></li><span class="tabulousclear"></span>
+							</ul>
+							<div id="tabs_container">
+								<div id="tabs-1">
+									<div ng-controller="MainCtrl">
+										<div id="grid1" ui-grid="{ data: myData }" class="grid"></div>
+									</div>
+
+									<!--<table border="0" class="order-table">
+										<tbody>
+											<tr>
+												<th style="width: 133px">Статус</th>
+												<th style="width: 82px">№</th>
+												<th style="width: 112px">Заказчик</th>
+												<th style="width: 101px">Дата</th>
+												<th style="width: 100px">Сумма, руб.</th>
+												<th></th>
+											</tr>
+											<tr class="trbg">
+												<td>Самовывоз</td>
+												<td><a href="#" class="order-a">2345</a></td>
+												<td><a href="#" class="order-a">Анна</a></td>
+												<td>22. 05. 2016</td>
+												<td class="order-sum">1 400</td>
+												<td><a href="#" class="order-tools"><i class="fa fa-wrench"></i></a><a href="#" class="order-delete"><i class="fa fa-times"></i></a></td>
+											</tr>
+											<tr>
+												<td>Самовывоз</td>
+												<td><a href="#" class="order-a">45</a></td>
+												<td><a href="#" class="order-a">Юлия</a></td>
+												<td>21. 05. 2016</td>
+												<td class="order-sum">230</td>
+												<td><a href="#" class="order-tools"><i class="fa fa-wrench"></i></a><a href="#" class="order-delete"><i class="fa fa-times"></i></a></td>
+											</tr>
+											<tr class="trbg">
+												<td>Отменен</td>
+												<td><a href="#" class="order-a">21</a></td>
+												<td><a href="#" class="order-a">Петр</a></td>
+												<td>21. 05. 2016</td>
+												<td class="order-sum">4 500</td>
+												<td><a href="#" class="order-tools"><i class="fa fa-wrench"></i></a><a href="#" class="order-delete"><i class="fa fa-times"></i></a></td>
+											</tr>
+											<tr>
+												<td>Готов к выдаче</td>
+												<td><a href="#" class="order-a">3</a></td>
+												<td><a href="#" class="order-a">Константин</a></td>
+												<td>20. 05. 2016</td>
+												<td class="order-sum">12 000</td>
+												<td><a href="#" class="order-tools"><i class="fa fa-wrench"></i></a><a href="#" class="order-delete"><i class="fa fa-times"></i></a></td>
+											</tr>
+											<tr class="trbg">
+												<td>Самовывоз</td>
+												<td><a href="#" class="order-a">689</a></td>
+												<td><a href="#" class="order-a">Сергей</a></td>
+												<td>20. 05. 2016</td>
+												<td class="order-sum">3 000</td>
+												<td><a href="#" class="order-tools"><i class="fa fa-wrench"></i></a><a href="#" class="order-delete"><i class="fa fa-times"></i></a></td>
+											</tr>
+										</tbody>
+									</table>-->
+								</div>
+								<div id="tabs-2" class="hidescale">
+									b
+								</div>
+								<div id="tabs-3" class="hidescale">
+									v
+								</div>
+							</div><!--Конец контейнера с содержанием табов-->
+						</div>
+					</div>
+
+				</div>
+				<div class="main-right-item">
+					<div class="main-right-child">
+						<div class="right-child1-title">
+							План продаж:
+						</div>
+						<div class="right-money">
+							187 345 руб.
+						</div>
+						<div class="child2-bar" style="width: 220px;">
+							<div style="width: 74.938%;" class="child2-bar-progress"></div>
+						</div>
+						<div class="right-end">
+							Цель: 250 000 руб.
+						</div>
+					</div>
+					
+					<div class="main-right-child2">
+						<a href="#" class="close-tab"><i class="fa fa-times"></i></a>
+						<div class="right-child2-title">
+							Прикрепите домен:
+						</div>
+						<div class="right-child2-text">
+							К вашему магазину ещё не прикреплен ни один домен
+						</div>
+						<a href="#" class="add-domain">Прикрепить</a>
+					</div>
+					
+					<div class="main-right-child3">
+						<a href="#" class="close-tab"><i class="fa fa-times"></i></a>
+						<div class="right-child3-title">
+							Рекомендуем прочитать
+						</div>
+						<div class="right-child3-text">
+							GROWTH HACKS
+						</div>
+						<a href="#" class="a-article">
+							7 способов измерить эффективность новой функции
+						</a>
+						<div class="right-child3-text">
+							GROWTH HACKS
+						</div>
+						<a href="#" class="a-article">
+							Кейс из России: Повышение конверсии в регистрации на 98% с помощью баннера<br>и упрощенной формы
+						</a>
+						<a href="#" class="read-more">Прочитать все</a>
+					</div>
+					<div class="main-right-child4">
+						<div class="right-child4-title">
+							Предложения партнеров:
+						</div>
+						<img src="leftm/partner.jpg">
+					</div>
+				</div>
+			</div>
+            <div class="footer">
+				<a href="#" class="addbtn"><i class="fa fa-plus"></i>Добавить <i class="fa fa-chevron-down"></i></a>
+            </div>
+			</div>
+        </div>
+
+        </div>
+    </div>
+
+    <!-- Mainly scripts -->
+	<!--<script src="js/jquery-3.1.0.js"></script>-->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- Flot -->
+    <script src="js/plugins/flot/jquery.flot.js"></script>
+    <script src="js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="js/plugins/flot/jquery.flot.pie.js"></script>
+    <script src="js/plugins/flot/jquery.flot.time.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <!-- Flot demo data -->
+    <script src="js/demo/flot-demo.js"></script>
+
+<div id="boxes">
+	<div id="dialog" class="window">
+	<div class="window-cancel">
+	Отменить
+	</div>
+	<div class="window-save">
+	Сохранить
+	</div>
+	<a href="#" class="close-tab"><i class="fa fa-times"></i></a>
+	</div>
+</div>
+<div id="mask"></div>
+<script src="js/app.js"></script>
+    <!-- Chosen -->
+    <script src="js/plugins/chosen/chosen.jquery.js"></script>
+
+   <!-- JSKnob -->
+   <script src="js/plugins/jsKnob/jquery.knob.js"></script>
+
+   <!-- Input Mask-->
+    <script src="js/plugins/jasny/jasny-bootstrap.min.js"></script>
+
+   <!-- Data picker -->
+   <script src="js/plugins/datapicker/bootstrap-datepicker.js"></script>
+
+   <!-- NouSlider -->
+   <script src="js/plugins/nouslider/jquery.nouislider.min.js"></script>
+
+   <!-- Switchery -->
+   <script src="js/plugins/switchery/switchery.js"></script>
+
+    <!-- IonRangeSlider -->
+    <script src="js/plugins/ionRangeSlider/ion.rangeSlider.min.js"></script>
+
+    <!-- iCheck -->
+    <script src="js/plugins/iCheck/icheck.min.js"></script>
+
+    <!-- MENU -->
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+    <!-- Color picker -->
+    <script src="js/plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
+
+    <!-- Clock picker -->
+    <script src="js/plugins/clockpicker/clockpicker.js"></script>
+
+    <!-- Image cropper -->
+    <script src="js/plugins/cropper/cropper.min.js"></script>
+
+    <!-- Date range use moment.js same as full calendar plugin -->
+    <script src="js/plugins/fullcalendar/moment.min.js"></script>
+
+    <!-- Date range picker -->
+    <script src="js/plugins/daterangepicker/daterangepicker.js"></script>
+
+    <!-- Select2 -->
+    <script src="js/plugins/select2/select2.full.min.js"></script>
+
+    <!-- TouchSpin -->
+    <script src="js/plugins/touchspin/jquery.bootstrap-touchspin.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            var $image = $(".image-crop > img")
+            $($image).cropper({
+                aspectRatio: 1.618,
+                preview: ".img-preview",
+                done: function(data) {
+                    // Output the result data for cropping image.
+                }
+            });
+
+            var $inputImage = $("#inputImage");
+            if (window.FileReader) {
+                $inputImage.change(function() {
+                    var fileReader = new FileReader(),
+                            files = this.files,
+                            file;
+
+                    if (!files.length) {
+                        return;
+                    }
+
+                    file = files[0];
+
+                    if (/^image\/\w+$/.test(file.type)) {
+                        fileReader.readAsDataURL(file);
+                        fileReader.onload = function () {
+                            $inputImage.val("");
+                            $image.cropper("reset", true).cropper("replace", this.result);
+                        };
+                    } else {
+                        showMessage("Please choose an image file.");
+                    }
+                });
+            } else {
+                $inputImage.addClass("hide");
+            }
+
+            $("#download").click(function() {
+                window.open($image.cropper("getDataURL"));
+            });
+
+            $("#zoomIn").click(function() {
+                $image.cropper("zoom", 0.1);
+            });
+
+            $("#zoomOut").click(function() {
+                $image.cropper("zoom", -0.1);
+            });
+
+            $("#rotateLeft").click(function() {
+                $image.cropper("rotate", 45);
+            });
+
+            $("#rotateRight").click(function() {
+                $image.cropper("rotate", -45);
+            });
+
+            $("#setDrag").click(function() {
+                $image.cropper("setDragMode", "crop");
+            });
+
+            $('#data_1 .input-group.date').datepicker({
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                calendarWeeks: true,
+                autoclose: true
+            });
+
+            $('#data_2 .input-group.date').datepicker({
+                startView: 1,
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true,
+                format: "dd/mm/yyyy"
+            });
+
+            $('#data_3 .input-group.date').datepicker({
+                startView: 2,
+                todayBtn: "linked",
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true
+            });
+
+            $('#data_4 .input-group.date').datepicker({
+                minViewMode: 1,
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true,
+                todayHighlight: true
+            });
+
+            $('#data_5 .input-daterange').datepicker({
+                keyboardNavigation: false,
+                forceParse: false,
+                autoclose: true
+            });
+
+            var elem = document.querySelector('.js-switch');
+            var switchery = new Switchery(elem, { color: '#1AB394' });
+
+            var elem_2 = document.querySelector('.js-switch_2');
+            var switchery_2 = new Switchery(elem_2, { color: '#ED5565' });
+
+            var elem_3 = document.querySelector('.js-switch_3');
+            var switchery_3 = new Switchery(elem_3, { color: '#1AB394' });
+
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green'
+            });
+
+            $('.demo1').colorpicker();
+
+            var divStyle = $('.back-change')[0].style;
+            $('#demo_apidemo').colorpicker({
+                color: divStyle.backgroundColor
+            }).on('changeColor', function(ev) {
+                        divStyle.backgroundColor = ev.color.toHex();
+                    });
+
+            $('.clockpicker').clockpicker();
+
+            $('input[name="daterange"]').daterangepicker();
+
+            $('#reportrange span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
+
+            $('#reportrange').daterangepicker({
+                format: 'MM/DD/YYYY',
+                startDate: moment().subtract(29, 'days'),
+                endDate: moment(),
+                minDate: '01/01/2012',
+                maxDate: '12/31/2015',
+                dateLimit: { days: 60 },
+                showDropdowns: true,
+                showWeekNumbers: true,
+                timePicker: false,
+                timePickerIncrement: 1,
+                timePicker12Hour: true,
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                },
+                opens: 'right',
+                drops: 'down',
+                buttonClasses: ['btn', 'btn-sm'],
+                applyClass: 'btn-primary',
+                cancelClass: 'btn-default',
+                separator: ' to ',
+                locale: {
+                    applyLabel: 'Submit',
+                    cancelLabel: 'Cancel',
+                    fromLabel: 'From',
+                    toLabel: 'To',
+                    customRangeLabel: 'Custom',
+                    daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr','Sa'],
+                    monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                    firstDay: 1
+                }
+            }, function(start, end, label) {
+                console.log(start.toISOString(), end.toISOString(), label);
+                $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+            });
+
+            $(".select2_demo_1").select2();
+            $(".select2_demo_2").select2();
+            $(".select2_demo_3").select2({
+                placeholder: "Select a state",
+                allowClear: true
+            });
+
+
+            $(".touchspin1").TouchSpin({
+                buttondown_class: 'btn btn-white',
+                buttonup_class: 'btn btn-white'
+            });
+
+            $(".touchspin2").TouchSpin({
+                min: 0,
+                max: 100,
+                step: 0.1,
+                decimals: 2,
+                boostat: 5,
+                maxboostedstep: 10,
+                postfix: '%',
+                buttondown_class: 'btn btn-white',
+                buttonup_class: 'btn btn-white'
+            });
+
+            $(".touchspin3").TouchSpin({
+                verticalbuttons: true,
+                buttondown_class: 'btn btn-white',
+                buttonup_class: 'btn btn-white'
+            });
+
+
+        });
+        var config = {
+                '.chosen-select'           : {},
+                '.chosen-select-deselect'  : {allow_single_deselect:true},
+                '.chosen-select-no-single' : {disable_search_threshold:10},
+                '.chosen-select-no-results': {no_results_text:'Oops, nothing found!'},
+                '.chosen-select-width'     : {width:"95%"}
+                }
+            for (var selector in config) {
+                $(selector).chosen(config[selector]);
+            }
+
+        $("#ionrange_1").ionRangeSlider({
+            min: 0,
+            max: 5000,
+            type: 'double',
+            prefix: "$",
+            maxPostfix: "+",
+            prettify: false,
+            hasGrid: true
+        });
+
+        $("#ionrange_2").ionRangeSlider({
+            min: 0,
+            max: 10,
+            type: 'single',
+            step: 0.1,
+            postfix: " carats",
+            prettify: false,
+            hasGrid: true
+        });
+
+        $("#ionrange_3").ionRangeSlider({
+            min: -50,
+            max: 50,
+            from: 0,
+            postfix: "°",
+            prettify: false,
+            hasGrid: true
+        });
+
+        $("#ionrange_4").ionRangeSlider({
+            values: [
+                "January", "February", "March",
+                "April", "May", "June",
+                "July", "August", "September",
+                "October", "November", "December"
+            ],
+            type: 'single',
+            hasGrid: true
+        });
+
+        $("#ionrange_5").ionRangeSlider({
+            min: 10000,
+            max: 100000,
+            step: 100,
+            postfix: " km",
+            from: 55000,
+            hideMinMax: true,
+            hideFromTo: false
+        });
+
+        $(".dial").knob();
+
+        $("#basic_slider").noUiSlider({
+            start: 40,
+            behaviour: 'tap',
+            connect: 'upper',
+            range: {
+                'min':  20,
+                'max':  80
+            }
+        });
+
+        $("#range_slider").noUiSlider({
+            start: [ 40, 60 ],
+            behaviour: 'drag',
+            connect: true,
+            range: {
+                'min':  20,
+                'max':  80
+            }
+        });
+
+        $("#drag-fixed").noUiSlider({
+            start: [ 40, 60 ],
+            behaviour: 'drag-fixed',
+            connect: true,
+            range: {
+                'min':  20,
+                'max':  80
+            }
+        });
+
+
+    </script>
+
+  <link rel="stylesheet" href="css/plugins/datapicker/datepicker3.css" type="text/css">
+</body>
+</html>
